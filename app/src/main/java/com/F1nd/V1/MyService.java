@@ -123,7 +123,7 @@ public class MyService extends Service {
                     word = word.replaceAll("[^a-zA-Z]"," ");
                     word = word.replaceAll("^ +| +$|( )+", " ");
                     word = word.replace("\n", "").replace("\r", "");
-                    if(isPause == false && isSearch == false){
+                    if(isPause == false && isSearch == false  && !word.isEmpty()){
                         getMeaning(null);
                     }
                     Log.d("RestartServiceReceiver", word);
@@ -254,8 +254,8 @@ public class MyService extends Service {
         notif.setStyle(style);
 
 
-        Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        notif.setSound(path);
+        //Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        //notif.setSound(path);
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 
